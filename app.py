@@ -61,7 +61,7 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/upload', methods=['POST'])
+@app.route('/graph', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
         return "No file part", 400
@@ -94,4 +94,4 @@ def upload_file():
     return "Invalid file type. Please upload a .wav file.", 400
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5007)
+    app.run(debug=True, port=5007,host='0.0.0.0')
